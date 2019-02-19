@@ -21,9 +21,14 @@
         });
     }
 
+    function readFile2(callback) {
+        var json = require('./dm-package.json');
+        return callback(json);
+    }
+
     var label = 'renderer';
     console.time(label);
-    readFile(function(data) {
+    readFile2(function(data) {
         console.log(data);
         console.timeEnd(label);
     });
